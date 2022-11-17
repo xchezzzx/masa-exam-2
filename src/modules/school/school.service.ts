@@ -283,6 +283,20 @@ class SchoolService implements ISchoolService {
         };
     }
 
+    private parseLocalTeachers(local: localTeacher[]): teacher[] {
+        const teacherGroups: _.Dictionary<localTeacher[]> = _.groupBy(local, (teacher: localTeacher) => teacher.id);
+
+        const result: teacher[] = [];
+
+        for (let key in teacherGroups) {
+            let value: localTeacher[] = teacherGroups[key];
+            
+            result.push(this.parseLocalTeacher(value));
+        }
+
+        return result;
+    }
+
     private parseLocalTeacher(local: localTeacher[]): teacher {
         if (local.length === 0) {
             throw ErrorService.getError(AppError.NoData);

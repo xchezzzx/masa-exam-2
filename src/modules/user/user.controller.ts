@@ -11,11 +11,24 @@ class UserController {
 
     async getUserById(req: Request, res: Response, next: NextFunction) {
         LoggerService.debug("getUserById method start");
-        const userId: number = parseInt(req.params.id);
+        const numericParamOrError: number | systemError = RequestHelper.ParseNumericInput(req.params.id);
         
-        LoggerService.debug("getUserById successful return");
-        const result: user = await UserService.getById(userId);
-        return res.status(200).json(result);
+        if (typeof numericParamOrError === "number") {
+            if (numericParamOrError > 0) {
+                LoggerService.debug("getUserById successful return");
+                const result: user = await UserService.getById(numericParamOrError);
+                return res.status(200).json(result);
+            }
+            else {
+                // TODO: Error handling
+                LoggerService.debug("getUserById unhandled error");
+            }
+        }
+        else {
+            LoggerService.debug("getUserById failure response");
+            return ResponseHelper.handleError(res, numericParamOrError);
+        }
+        LoggerService.debug("getUserById method end");
     }
     
     async updateById(req: Request, res: Response, next: NextFunction) {
