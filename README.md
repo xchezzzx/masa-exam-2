@@ -103,7 +103,7 @@ You need to write a query that returns for each user a full data. Consider that 
 | --- | --- | -- |
 | John Doe | Mark Smith | Manager |
 | Mary Smith | Klark Smith | Cashier |
-| Patrice Raymond |  | Not an eployee |
+| Patrice Raymond | Mark Smith | Not an eployee |
 
 18. **Write a method in JS/TS that gets as an argument 2 dates and returns a boolean value of whether those dates share the same month**. *=> 5 points*
 
