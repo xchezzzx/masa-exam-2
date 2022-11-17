@@ -11,56 +11,56 @@
 1. **What is Repro steps?** *=> 2 points*
  - [ ] Logical steps for planning the structure of DB repository
  - [ ] Steps that are required in order to reproduce a bug in the system
- - [ ] Sequence of actions required to build a new nodejs server
+ - [x] Sequence of actions required to build a new nodejs server
  - [ ] A process of creation of a new Github repository
 
 2. **What is the role of a helper in nodejs server architecture?** *=> 2 points*
  - [ ] Get the request from the router, treat the request parameters, prepare the response of the server to the consumer
  - [ ] Keep state of a specific logic portion of the system, provide processing of the data passed from the different controllers, parse the data and returned the processed response
  - [ ] To be the first element in the system that should service the consumer for his CRUD request to the server
- - [ ] To provide services to the system that do not require a state but should be used across the whole system
+ - [x] To provide services to the system that do not require a state but should be used across the whole system
 
 3. **What is a foreign key?** *=> 2 points*
  - [ ] A key by which the JWT token is signed
  - [ ] A pair security key for a private key. This key is stored in online repository for asymmetric encryption processing
- - [ ] A way to link between 2 tables in the relational DB
+ - [x] A way to link between 2 tables in the relational DB
  - [ ] Such a term does not exist
 
 4. **What is the code of a request redirection in HTTP protocol?** *=> 2 points*
  - [ ] 2xx
- - [ ] 3xx
+ - [x] 3xx
  - [ ] 4xx
  - [ ] 5xx
 
 5. **What is a Jira ticket?** *=> 2 points*
- - [ ] A definition of a task that should be done or details of a bug opened in the system
+ - [x] A definition of a task that should be done or details of a bug opened in the system
  - [ ] A ticket by which the symmtric authentication is being processed. This key is tored in the operating system
  - [ ] A portion of data used to authenticate against a nodejs server
  - [ ] A synonym for a JWT token
 
 6. **Which npm package willl you use to get numerous help methods for arrays? (more than a single answer can be selected)** *=> 2 points*
- - [ ] Underscore
+ - [x] Underscore
  - [ ] Nodemon
- - [ ] Lodash
+ - [x] Lodash
  - [ ] All answers are correct
 
 7. **What is needed for enhancement of a security level of a JWT token?** *=> 2 points*
  - [ ] Password
- - [ ] Encryption
+ - [x] Encryption
  - [ ] A private key
  - [ ] Secret
 
 8. **What is dotenv?** *=> 2 points*
  - [ ] An environment of an operational system like release, production, etc.
- - [ ] An npm package that provides the ability to set different system parameters for different system environments
+ - [x] An npm package that provides the ability to set different system parameters for different system environments
  - [ ] A library of .Net nodejs environment
  - [ ] An npm package that is added by default while creating a new nodejs server
 
 9. **How will you ensure a specific value in a DB column that is not the IDENTITY column will not be duplicate? (more than a single answer can be selected)** *=> 2 points*
- - [ ] Add another private key on this column
+ - [x] Add another private key on this column
  - [ ] Add a UNIQUE CONSTRAINT to this column
  - [ ] Add a UNIQUE INDEX to this column
- - [ ] I will add a method on my server to ensure no duplicates are recorded in the DB for this column
+ - [x] I will add a method on my server to ensure no duplicates are recorded in the DB for this column
 
 10. **What is a log level** *=> 2 points*
  - [ ] Log level is a level at which and up log messages will be recorded in any log target
@@ -73,13 +73,23 @@
 
 11. **Constructor** *=> 4 points*
 
+Constructor is a function used for creating an object of a class and setting the values of this object.
+
 12. **Connection string** *=> 4 points*
+
+A string that contains amount of parameters for connection to the DB-server: DB-server name, DB name, type of driver etc. 
 
 13. **IDENTITY & SEED** *=> 5 points*
 
+In terms of DB IDENTITY means that numerical values of the specified col in table can't be duplicated. It can has an in/de-crement option and in this case the SEED is the start parameter for the counting.
+
 14. **Abstract class** *=> 5 points*
 
+Abstract class is a class that can't be used to create any objects, but gives a basic functionality for classes that will be inherited from it.
+
 15. **Export keyword in nodejs code** *=> 4 points*
+
+Export in JS means used to make a function or an object available from another  file or module.
 
  
 ## Part II: Practice on paper *=> 45 points*
@@ -106,6 +116,16 @@ You need to write a query that returns for each user a full data. Consider that 
 | Patrice Raymond | Mark Smith | Not an eployee |
 
 18. **Write a method in JS/TS that gets as an argument 2 dates and returns a boolean value of whether those dates share the same month**. *=> 5 points*
+
+ function copmareMonths(date1: Date, date2: Date): boolean {
+        let result: boolean;
+        if (date1.getMonth() === date2.getMonth())
+                result = true;
+        else 
+                result = false;
+
+        return result;
+ }
 
 19. **Explain the following piece of code:** *=> 5 points*
 
